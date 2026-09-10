@@ -20,3 +20,20 @@ Repository Pattern.
 | Clean Architecture | `domain` / `data` / `presentation` layers |
 
 ## Project Structure
+lib/
+├── core/
+│ ├── di/service_locator.dart # Dependency injection container
+│ └── network/api_client.dart # HTTP wrapper for DummyJSON
+├── data/
+│ ├── datasources/ # Talks to the DummyJSON API
+│ └── repositories/ # Concrete repository implementations
+├── domain/
+│ ├── entities/ # Product, CartItem
+│ ├── repositories/ # Abstract contracts
+│ └── usecases/ # One class per action
+├── presentation/
+│ ├── bloc/product/ # Product list state
+│ ├── bloc/cart/ # Global cart state
+│ ├── pages/ # List, Detail, Cart screens
+│ └── widgets/ # ProductCard, CartBadge
+└── main.dart   
